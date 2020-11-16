@@ -29,6 +29,8 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
+// using connect() function to map data + actions...
+// from the Redux store to a component's props
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
