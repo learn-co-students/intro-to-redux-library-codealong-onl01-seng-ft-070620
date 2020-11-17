@@ -41,7 +41,7 @@ Redux provides a function, `createStore()`, that, when invoked, returns an
 instance of the Redux store for us. So we can use that method to create a store.
 We want to import `createStore()` in our `src/index.js` file, where ReactDOM
 renders our application.
-
+ 
 ```javascript
 // ./src/index.js
 
