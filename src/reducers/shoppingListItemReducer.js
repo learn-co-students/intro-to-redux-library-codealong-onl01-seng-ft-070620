@@ -1,16 +1,19 @@
-export default function shoppingListItemReducer(
-	state = {
-		items: []
-	},
-	action
-) {
-	switch (action.type) {
-		case 'INCREASE_COUNT':
-			return {
-				...state,
-				items: state.items.concat(state.items.length + 1)
-			}
-		default:
-			return state;
-	}
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import shoppingListItemReducer from './reducers/shoppingListItemReducer';
+import App from './App';
+import './index.css';
+ 
+const store = createStore(
+  shoppingListItemReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+); /* code change */
+ 
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
